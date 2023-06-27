@@ -1,5 +1,5 @@
 pipeline {
-    agent {label 'test'}
+    agent {label 'Built-In Node'}
     tools {
         maven 'MAVEN_HOME'
         jdk 'JAVA'
