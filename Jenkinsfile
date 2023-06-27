@@ -14,7 +14,7 @@ pipeline {
         stage("./waconsumersurvey"){
             steps{
                 sh "rm -rf waconsumersurvey"
-                sh "git clone https://m-gupta@bitbucket.org/m-gupta/waconsumersurvey.git -b ${branch_name}"
+                sh "git clone https://m-gupta:qWcDe6aGCTq7vNBy8hNV@bitbucket.org/m-gupta/waconsumersurvey.git -b ${branch_name}"
                 dir("waconsumersurvey/"){
                 //sh "mvn clean package"
                 }
