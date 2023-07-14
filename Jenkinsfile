@@ -23,7 +23,7 @@ pipeline {
         stage("Docker Build") {
             steps {
                 script{
-                    sh "aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin 738448646260.dkr.ecr.us-east-1.amazonaws.com"
+                    sh "aws ecr get-login-password --region us-east-1 --profile test-jenkins | docker login --username AWS --password-stdin 738448646260.dkr.ecr.us-east-1.amazonaws.com"
                     sh "docker build -t test ."
                     sh "docker tag test:latest 738448646260.dkr.ecr.us-east-1.amazonaws.com/test:latest:${env.branch_name}-${BUILD_NUMBER}-date-${currentDate}"
                     sh "docker push 738448646260.dkr.ecr.us-east-1.amazonaws.com/test:latest:${env.branch_name}-${BUILD_NUMBER}-date-${currentDate}"
